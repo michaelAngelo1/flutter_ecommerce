@@ -1,8 +1,7 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_ecommerce/constants.dart';
+import 'package:flutter_ecommerce/screens/components/body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,14 +9,39 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.1,
-        leading: IconButton(
-          icon: SvgPicture.asset("assets/icon/back.svg"),
+      appBar: buildAppBar(),
+      body: const Body(),
+    );
+  }
+
+  AppBar buildAppBar() {
+    return AppBar(
+      backgroundColor: Colors.white,
+      elevation: 0.1,
+      leading: IconButton(
+        icon: const Icon(
+          Icons.arrow_back,
+          color: kTextColor,
+        ),
+        onPressed: () {},
+      ),
+      actions: <Widget>[
+        IconButton(
+          icon: SvgPicture.asset(
+            "assets/icons/search.svg",
+            color: kTextColor
+          ),
           onPressed: () {},
-        )
-      )
+        ),
+        IconButton(
+          icon: SvgPicture.asset(
+            "assets/icons/cart.svg",
+            color: kTextColor
+          ),
+          onPressed: () {},
+        ),
+        const SizedBox(height: kDefaultPadding / 2),
+      ]
     );
   }
 }

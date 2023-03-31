@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: Theme.of(context).copyWith(
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
       ),
-      home: const HomeScreen()
+      home: const HomeScreen(),
     );
   }
 }
