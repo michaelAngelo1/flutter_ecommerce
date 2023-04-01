@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_ecommerce/constants.dart";
+import 'package:flutter_ecommerce/screens/components/categories.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -7,6 +8,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: const <Widget>[
         Padding(
           padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -24,40 +26,4 @@ class Body extends StatelessWidget {
   }
 }
 
-class Categories extends StatefulWidget {
-  const Categories({super.key});
 
-  @override
-  State<Categories> createState() => _CategoriesState();
-}
-
-class _CategoriesState extends State<Categories> {
-  List<String> categories = ["Hand bag", "Jewellery", "Footwear", "Dresses"];
-
-  int selectedIndex = 0;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 25,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: categories.length,
-        itemBuilder: (context, index) => 
-          buildCategory(index)
-      )
-    );
-  }
-
-  Widget buildCategory(int index) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      child: Text(
-        categories[index],
-        style: TextStyle(
-          fontWeight: FontWeight.w700,
-          color: kTextColor
-        )
-      ),
-    );
-  }
-}
