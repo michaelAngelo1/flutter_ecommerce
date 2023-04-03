@@ -28,6 +28,8 @@ class Body extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+
+            // Gridview for displaying as grids of cards
             child: GridView.builder(
               itemCount: products.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -37,6 +39,7 @@ class Body extends StatelessWidget {
                 crossAxisSpacing: kDefaultPadding,
               ),
               itemBuilder: (context, index) => 
+                // Each item card is called by the index, this class passes index as passing parameter to item_cards.dart
                 ItemCard(product: products[index], press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DetailItem(product: products[index])))),
             ),
           )
