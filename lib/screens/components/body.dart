@@ -33,7 +33,7 @@ class Body extends StatelessWidget {
                 mainAxisSpacing: kDefaultPadding,
                 crossAxisSpacing: kDefaultPadding,
               ),
-              itemBuilder: (context, index) => ItemCard(),
+              itemBuilder: (context, index) => ItemCard(product: products[index]),
             ),
           )
         )
@@ -41,48 +41,3 @@ class Body extends StatelessWidget {
     );
   }
 }
-
-class ItemCard extends StatelessWidget {
-  final Product product;
-  final Function press;
-  const ItemCard({
-    super.key,
-    required this.product,
-    required this.press,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Container(
-          // height: 180,
-          // width: 160,
-          decoration: BoxDecoration(
-            color: products[0].color,
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Image.asset(products[0].image),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-          child: Text(
-            products[0].title,
-            style: const TextStyle(
-              color: kTextLightColor,
-            )
-          ),
-        ),
-        const Text(
-          "\$234",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          )
-        ),
-      ],
-    );
-  }
-}
-
-
