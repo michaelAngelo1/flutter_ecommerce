@@ -3,6 +3,9 @@ import "package:flutter_ecommerce/constants.dart";
 import 'package:flutter_ecommerce/screens/home/components/categories.dart';
 import 'package:flutter_ecommerce/models/product.dart';
 
+import '../../details/detail_item.dart';
+import 'item_cards.dart';
+
 class Body extends StatelessWidget {
   const Body({super.key});
 
@@ -33,7 +36,8 @@ class Body extends StatelessWidget {
                 mainAxisSpacing: kDefaultPadding,
                 crossAxisSpacing: kDefaultPadding,
               ),
-              itemBuilder: (context, index) => ItemCard(product: products[index]),
+              itemBuilder: (context, index) => 
+                ItemCard(product: products[index], press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DetailItem(product: products[index])))),
             ),
           )
         )

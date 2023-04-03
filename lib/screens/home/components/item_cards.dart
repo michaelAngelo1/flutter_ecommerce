@@ -4,11 +4,11 @@ import 'package:flutter_ecommerce/models/product.dart';
 
 class ItemCard extends StatelessWidget {
   final Product product;
-  // final Function press;
+  final Function press;
   const ItemCard({
     super.key,
     required this.product,
-    // required this.press, 
+    required this.press, 
   });
 
   @override
