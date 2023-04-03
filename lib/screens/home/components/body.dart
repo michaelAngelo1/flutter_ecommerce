@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_ecommerce/constants.dart";
-import 'package:flutter_ecommerce/screens/components/categories.dart';
+import 'package:flutter_ecommerce/screens/home/components/categories.dart';
 import 'package:flutter_ecommerce/models/product.dart';
 
 class Body extends StatelessWidget {
