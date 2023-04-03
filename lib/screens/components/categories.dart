@@ -48,7 +48,7 @@ class _CategoriesState extends State<Categories> {
               )
             ),
             Container(
-              margin: EdgeInsets.only(top: kDefaultPadding / 4),
+              margin: const EdgeInsets.only(top: kDefaultPadding / 4),
               height: 1,
               width: 30,
               color: selectedIndex == index ? Colors.black : Colors.transparent,
