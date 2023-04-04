@@ -37,7 +37,8 @@ class Body extends StatelessWidget {
                   ),
                   child: Column(
                     children: <Widget>[
-                      ColorAndSize(product: product)
+                      ColorAndSize(product: product),
+                      ProductDescription(product: product)
                     ]
                   )
                 ),
@@ -50,6 +51,8 @@ class Body extends StatelessWidget {
     );  
   }
 }
+
+
 
 
 class ColorDot extends StatelessWidget {
