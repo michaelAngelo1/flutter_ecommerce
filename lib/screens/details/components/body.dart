@@ -5,6 +5,8 @@ import 'package:flutter_ecommerce/screens/details/components/color_and_size.dart
 import 'package:flutter_ecommerce/screens/details/components/product_title_image.dart';
 import 'package:flutter_ecommerce/screens/details/components/product_description.dart';
 
+import 'cart_counter.dart';
+
 class Body extends StatelessWidget {
   final Product product;
   const Body({
@@ -40,7 +42,7 @@ class Body extends StatelessWidget {
                     children: <Widget>[
                       ColorAndSize(product: product),
                       ProductDescription(product: product),
-                      CartCounter(),
+                      const CartCounter(),
                     ]
                   )
                 ),
@@ -52,56 +54,4 @@ class Body extends StatelessWidget {
       )
     );  
   }
-}
-
-class CartCounter extends StatefulWidget {
-  const CartCounter({
-    super.key,
-  });
-
-  @override
-  State<CartCounter> createState() => _CartCounterState();
-}
-
-class _CartCounterState extends State<CartCounter> {
-  int itemCount = 1;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        buildOutlinedButton(icon: Icons.remove, press: () {}),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
-          child: Text(
-            "1",
-            style: TextStyle(
-              fontSize: 20,
-            )
-          ),
-        ),
-        buildOutlinedButton(icon: Icons.add, press: () {}),
-      ]
-    );
-  }
-}
-
-SizedBox buildOutlinedButton({required IconData icon, required Function press}) {
-  return SizedBox(
-    width: 40,
-    height: 32,
-    child: OutlinedButton(
-      style: OutlinedButton.styleFrom(
-        padding: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        )
-      ),
-      onPressed: () {
-        press;
-      },
-      child: Icon(
-        icon,
-      ),
-    )
-  );
 }
