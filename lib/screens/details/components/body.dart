@@ -4,8 +4,10 @@ import 'package:flutter_ecommerce/models/product.dart';
 import 'package:flutter_ecommerce/screens/details/components/color_and_size.dart';
 import 'package:flutter_ecommerce/screens/details/components/product_title_image.dart';
 import 'package:flutter_ecommerce/screens/details/components/product_description.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'cart_counter.dart';
+import 'counter_with_wish_btn.dart';
 
 class Body extends StatelessWidget {
   final Product product;
@@ -42,7 +44,49 @@ class Body extends StatelessWidget {
                     children: <Widget>[
                       ColorAndSize(product: product),
                       ProductDescription(product: product),
-                      const CartCounter(),
+                      const CartCounterWishBtn(),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: kDefaultPadding
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              margin: const EdgeInsets.only(right: kDefaultPadding),
+                              height: 50, 
+                              width: 58,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(18),
+                                border: Border.all(color: product.color),
+                              ),
+                              child: IconButton(
+                                icon: SvgPicture.asset("assets/icons/add_to_cart.svg"),
+                                onPressed: () {},
+                              )
+                            ),
+                            Expanded(
+                              child: SizedBox(
+                                height: 50,
+                                child: TextButton(
+                                  style: TextButton.styleFrom(
+                                    backgroundColor: product.color,
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+                                  ),
+                                  onPressed: () {},
+                                  child: const Text(
+                                    "BUY NOW",
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    )
+                                  )
+                                )
+                              ),
+                            )
+                          ]
+                        ),
+                      )
                     ]
                   )
                 ),
