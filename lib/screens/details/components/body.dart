@@ -61,6 +61,7 @@ class Body extends StatelessWidget {
                               ),
                               child: IconButton(
                                 icon: SvgPicture.asset("assets/icons/add_to_cart.svg"),
+                                color: product.color,
                                 onPressed: () {},
                               )
                             ),
