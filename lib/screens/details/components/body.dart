@@ -3,6 +3,7 @@ import 'package:flutter_ecommerce/constants.dart';
 import 'package:flutter_ecommerce/models/product.dart';
 import 'package:flutter_ecommerce/screens/details/components/color_and_size.dart';
 import 'package:flutter_ecommerce/screens/details/components/product_title_image.dart';
+import 'package:flutter_ecommerce/screens/details/components/product_description.dart';
 
 class Body extends StatelessWidget {
   final Product product;
@@ -38,7 +39,8 @@ class Body extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       ColorAndSize(product: product),
-                      ProductDescription(product: product)
+                      ProductDescription(product: product),
+                      CartCounter(),
                     ]
                   )
                 ),
@@ -52,40 +54,54 @@ class Body extends StatelessWidget {
   }
 }
 
-
-
-
-class ColorDot extends StatelessWidget {
-  final Color color;
-  final bool isSelected;
-  const ColorDot({
-    Key? key,
-    required this.color,
-    this.isSelected = false,
-  }) : super(key: key);
+class CartCounter extends StatefulWidget {
+  const CartCounter({
+    super.key,
+  });
 
   @override
+  State<CartCounter> createState() => _CartCounterState();
+}
+
+class _CartCounterState extends State<CartCounter> {
+  int itemCount = 1;
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(
-        top: kDefaultPadding / 4,
-        right: kDefaultPadding / 2,
-      ),
-      padding: const EdgeInsets.all(2.5),
-      width: 24,
-      height: 24,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: isSelected ? color : Colors.transparent,
-        )
-      ),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: color,
-          shape: BoxShape.circle
-        )
-      )
+    return Row(
+      children: <Widget>[
+        buildOutlinedButton(icon: Icons.remove, press: () {}),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
+          child: Text(
+            "1",
+            style: TextStyle(
+              fontSize: 20,
+            )
+          ),
+        ),
+        buildOutlinedButton(icon: Icons.add, press: () {}),
+      ]
     );
   }
+}
+
+SizedBox buildOutlinedButton({required IconData icon, required Function press}) {
+  return SizedBox(
+    width: 40,
+    height: 32,
+    child: OutlinedButton(
+      style: OutlinedButton.styleFrom(
+        padding: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        )
+      ),
+      onPressed: () {
+        press;
+      },
+      child: Icon(
+        icon,
+      ),
+    )
+  );
 }

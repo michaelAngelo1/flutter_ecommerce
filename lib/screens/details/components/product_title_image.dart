@@ -34,7 +34,7 @@ class ProductTitleWithImage extends StatelessWidget {
           Row(
             children: <Widget>[
               RichText(
-                text: TextSpan(
+                text: TextSpan( 
                   children: [
                     const TextSpan(text: "Price\n"),
                     TextSpan(

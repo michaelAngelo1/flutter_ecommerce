@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/constants.dart';
 import 'package:flutter_ecommerce/models/product.dart';
-import 'package:flutter_ecommerce/screens/details/components/body.dart';
 
 class ColorAndSize extends StatelessWidget {
   const ColorAndSize({
@@ -61,6 +60,41 @@ class ColorAndSize extends StatelessWidget {
           ),
         )
       ]
+    );
+  }
+}
+
+class ColorDot extends StatelessWidget {
+  final Color color;
+  final bool isSelected;
+  const ColorDot({
+    Key? key,
+    required this.color,
+    this.isSelected = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: kDefaultPadding / 4,
+        right: kDefaultPadding / 2,
+      ),
+      padding: const EdgeInsets.all(2.5),
+      width: 24,
+      height: 24,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: isSelected ? color : Colors.transparent,
+        )
+      ),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: color,
+          shape: BoxShape.circle
+        )
+      )
     );
   }
 }
