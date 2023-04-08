@@ -5,8 +5,6 @@ import 'package:flutter_ecommerce/screens/details/components/color_and_size.dart
 import 'package:flutter_ecommerce/screens/details/components/product_title_image.dart';
 import 'package:flutter_ecommerce/screens/details/components/product_description.dart';
 import 'package:flutter_svg/svg.dart';
-
-import 'cart_counter.dart';
 import 'counter_with_wish_btn.dart';
 
 class Body extends StatelessWidget {
@@ -45,49 +43,7 @@ class Body extends StatelessWidget {
                       ColorAndSize(product: product),
                       ProductDescription(product: product),
                       const CartCounterWishBtn(),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: kDefaultPadding
-                        ),
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              margin: const EdgeInsets.only(right: kDefaultPadding),
-                              height: 50, 
-                              width: 58,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(18),
-                                border: Border.all(color: product.color),
-                              ),
-                              child: IconButton(
-                                icon: SvgPicture.asset("assets/icons/add_to_cart.svg"),
-                                color: product.color,
-                                onPressed: () {},
-                              )
-                            ),
-                            Expanded(
-                              child: SizedBox(
-                                height: 50,
-                                child: TextButton(
-                                  style: TextButton.styleFrom(
-                                    backgroundColor: product.color,
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-                                  ),
-                                  onPressed: () {},
-                                  child: const Text(
-                                    "BUY NOW",
-                                    style: TextStyle(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    )
-                                  )
-                                )
-                              ),
-                            )
-                          ]
-                        ),
-                      )
+                      AddToCart(product: product)
                     ]
                   )
                 ),
@@ -98,5 +54,61 @@ class Body extends StatelessWidget {
         ]
       )
     );  
+  }
+}
+
+class AddToCart extends StatelessWidget {
+  const AddToCart({
+    super.key,
+    required this.product,
+  });
+
+  final Product product;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: kDefaultPadding
+      ),
+      child: Row(
+        children: <Widget>[
+          Container(
+            margin: const EdgeInsets.only(right: kDefaultPadding),
+            height: 50, 
+            width: 58,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: product.color),
+            ),
+            child: IconButton(
+              icon: SvgPicture.asset("assets/icons/add_to_cart.svg"),
+              color: product.color,
+              onPressed: () {},
+            )
+          ),
+          Expanded(
+            child: SizedBox(
+              height: 50,
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: product.color,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+                ),
+                onPressed: () {},
+                child: const Text(
+                  "BUY NOW",
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  )
+                )
+              )
+            ),
+          )
+        ]
+      ),
+    );
   }
 }
