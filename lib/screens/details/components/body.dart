@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/constants.dart';
-import 'package:flutter_ecommerce/models/product.dart';
+import 'package:flutter_ecommerce/models/products/handbags.dart';
 import 'package:flutter_ecommerce/screens/details/components/color_and_size.dart';
 import 'package:flutter_ecommerce/screens/details/components/product_title_image.dart';
 import 'package:flutter_ecommerce/screens/details/components/product_description.dart';
@@ -8,7 +8,7 @@ import 'package:flutter_svg/svg.dart';
 import 'counter_with_wish_btn.dart';
 
 class Body extends StatelessWidget {
-  final Product product;
+  final HandBags product;
   const Body({
     Key? key,
     required this.product,
@@ -63,7 +63,7 @@ class AddToCart extends StatelessWidget {
     required this.product,
   });
 
-  final Product product;
+  final HandBags product;
 
   @override
   Widget build(BuildContext context) {

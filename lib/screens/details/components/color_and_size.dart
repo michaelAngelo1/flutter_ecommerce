@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/constants.dart';
-import 'package:flutter_ecommerce/models/product.dart';
+import 'package:flutter_ecommerce/models/products/handbags.dart';
 
 class ColorAndSize extends StatelessWidget {
   const ColorAndSize({
@@ -8,7 +8,7 @@ class ColorAndSize extends StatelessWidget {
     required this.product,
   });
 
-  final Product product;
+  final HandBags product;
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-import 'package:flutter_ecommerce/models/product.dart';
+import 'package:flutter_ecommerce/models/products/handbags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -6,7 +6,7 @@ import '../../constants.dart';
 import 'components/body.dart';
 
 class DetailItem extends StatelessWidget {
-  final Product product;
+  final HandBags product;
   const DetailItem({super.key, required this.product});  
 
   @override

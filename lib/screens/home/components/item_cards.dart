@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import "package:flutter_ecommerce/constants.dart";
-import 'package:flutter_ecommerce/models/product.dart';
+import 'package:flutter_ecommerce/models/products/handbags.dart';
 
 class ItemCard extends StatelessWidget {
-  final Product product;
+  final HandBags product;
   final Function press;
   const ItemCard({
     Key? key,

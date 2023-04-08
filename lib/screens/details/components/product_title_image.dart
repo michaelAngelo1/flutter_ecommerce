@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce/models/product.dart';
+import 'package:flutter_ecommerce/models/products/handbags.dart';
 
 import '../../../constants.dart';
 
@@ -9,7 +9,7 @@ class ProductTitleWithImage extends StatelessWidget {
     required this.product,
   });
 
-  final Product product;
+  final HandBags product;
 
   @override
   Widget build(BuildContext context) {
