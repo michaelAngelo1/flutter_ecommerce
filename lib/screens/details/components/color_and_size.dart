@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/constants.dart';
-import 'package:flutter_ecommerce/models/products/handbags.dart';
+import 'package:flutter_ecommerce/models/products/women/handbags.dart';
 
 class ColorAndSize extends StatelessWidget {
   const ColorAndSize({

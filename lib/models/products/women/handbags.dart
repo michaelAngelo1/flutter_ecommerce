@@ -20,7 +20,7 @@ List<HandBags> products = [
   HandBags(
     id: 1, 
     title: "Office Code",
-    price: 234,
+    price: 2200,
     size: 12,
     description: dummyText,
     image: "assets/images/bag_1.png",
@@ -29,7 +29,7 @@ List<HandBags> products = [
   HandBags(
     id: 2,
     title: "Belt Bag",
-    price: 234,
+    price: 2000,
     size: 8,
     description: dummyText,
     image: "assets/images/bag_2.png",
@@ -38,7 +38,7 @@ List<HandBags> products = [
   HandBags(
     id: 3,
     title: "Hang Top",
-    price: 234,
+    price: 450,
     size: 10,
     description: dummyText,
     image: "assets/images/bag_3.png",
@@ -47,7 +47,7 @@ List<HandBags> products = [
   HandBags(
     id: 4,
     title: "Old Fashion",
-    price: 234,
+    price: 240,
     size: 11,
     description: dummyText,
     image: "assets/images/bag_4.png",
@@ -56,7 +56,7 @@ List<HandBags> products = [
   HandBags(
     id: 5,
     title: "Office Code",
-    price: 234,
+    price: 500,
     size: 12,
     description: dummyText,
     image: "assets/images/bag_5.png",
@@ -65,7 +65,7 @@ List<HandBags> products = [
   HandBags(
     id: 6,
     title: "Office Code",
-    price: 234,
+    price: 200,
     size: 12,
     description: dummyText,
     image: "assets/images/bag_6.png",
