@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/screens/home/login_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_ecommerce/constants.dart';
 import 'package:flutter_ecommerce/screens/home/components/body.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final String username;
+  const HomeScreen({
+    super.key,
+    required this.username,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +28,9 @@ class HomeScreen extends StatelessWidget {
           Icons.arrow_back,
           color: kTextColor,
         ),
-        onPressed: () {},
+        onPressed: () {
+          
+        },
       ),
       actions: <Widget>[
         IconButton(

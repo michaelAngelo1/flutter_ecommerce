@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/constants.dart';
-import 'package:flutter_ecommerce/screens/home/home_screen.dart';
+import 'package:flutter_ecommerce/screens/home/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       duration: const Duration(seconds: 3),
     );
 
-    _animationController.forward().then((_) => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomeScreen())));
+    _animationController.forward().then((_) => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const LoginScreen())));
   }
 
   @override
@@ -61,17 +61,13 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         child: ScaleTransition(
           scale: _animationController.drive(
             Tween<double>(
-              begin: 1,
+              begin: 1.5,
               end: 1.5,
             ).chain(
               CurveTween(curve: Curves.ease),
             ),
           ),
           child: Container(
-            decoration: BoxDecoration(
-              color: Color(0xFF3D82AE),
-              borderRadius: BorderRadius.circular(125),
-            ),
             child: Padding(
               padding: const EdgeInsets.all(kDefaultPadding),
               child: Column(
@@ -79,10 +75,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                 children: <Widget>[
                   Text(
                     "Stylecommerce",
-                    style: GoogleFonts.lato(
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
+                    style: GoogleFonts.poppins(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.blueAccent,
                     )
                   ),
                   const SizedBox(height: 5.0),
@@ -91,7 +87,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                     style: GoogleFonts.lato(
                       fontSize: 13.0,
                       fontWeight: FontWeight.w500,
-                      color: Colors.white,
+                      color: Colors.blueAccent,
                     )
                   ),
                 ],
